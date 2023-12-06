@@ -22,6 +22,7 @@ jobs:
         run: |
            newman run ADMIN_API_COLLECTION/Admin_API_QA.json -e ADMIN_API_COLLECTION/BANK78_ENV_postman_environment.json --reporters cli,allure
            echo "Postman tests run."
+           test-runner-command || true 
            
       - name: Proceed with workflow
         run: |     
