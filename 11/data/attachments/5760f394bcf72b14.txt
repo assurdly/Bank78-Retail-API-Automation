@@ -1,0 +1,43 @@
+
+pm.test("Response status code is 200", function () {
+  pm.expect(pm.response.code).to.equal(200);
+});
+
+
+pm.test("Verify that 'hasResult' is a boolean value", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData.hasOwnProperty('hasResult')).to.be.true;
+  pm.expect(responseData.hasResult).to.be.a('boolean');
+});
+
+
+pm.test("Validate the 'result' array is present and contains at least one element", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.result).to.exist.and.to.be.an('array').and.to.have.lengthOf.at.least(1);
+});
+
+
+pm.test("Verify that userTypeName is a non-empty string", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.result).to.be.an('array').that.is.not.empty;
+    responseData.result.forEach(function (user) {
+        pm.expect(user.userTypeName).to.be.a('string').and.to.have.lengthOf.at.least(1, "userTypeName should not be empty");
+    });
+});
+
+
+pm.test("Validate email format", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData).to.be.an('object');
+  pm.expect(responseData.result).to.be.an('array').and.to.not.be.empty;
+  
+  responseData.result.forEach(function(user) {
+    pm.expect(user.email).to.be.a('string').and.to.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+  });
+});
+
