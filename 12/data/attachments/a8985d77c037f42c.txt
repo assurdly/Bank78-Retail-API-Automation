@@ -1,0 +1,25 @@
+pm.test("Response 'hasResult' is false", function () {
+    pm.expect(pm.response.json().hasResult).to.be.false;
+});
+
+pm.test("Response 'resultType' is 'Error'", function () {
+    pm.expect(pm.response.json().resultType).to.equal("Error");
+});
+
+pm.test("Response 'message' is 'Invalid KYC Status - An Attempting to Downgrade is not possible'", function () {
+    pm.expect(pm.response.json().message).to.equal("Invalid KYC Status - An Attempting to Downgrade is not possible");
+});
+
+pm.test("Response 'successful' is false", function () {
+    pm.expect(pm.response.json().successful).to.be.false;
+});
+
+// Optional: Verify 'result' object (if needed)
+pm.test("Response 'result' object is null", function () {
+    pm.expect(pm.response.json().result).to.be.null;
+});
+
+// Optional: Verify 'validationMessages' (if needed)
+pm.test("Response 'validationMessages' is null", function () {
+    pm.expect(pm.response.json().validationMessages).to.be.null;
+});

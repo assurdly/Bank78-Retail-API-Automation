@@ -1,0 +1,40 @@
+pm.test("Verify response hasResult is true", function () {
+    pm.expect(pm.response.json().hasResult).to.eql(true);
+});
+
+pm.test("Verify response result contains expected message", function () {
+    const result = pm.response.json().result;
+
+    // Check if 'message' property exists and is a string
+    pm.expect(result.message).to.be.a('string');
+    // Check if 'message' property has the expected value
+    pm.expect(result.message).to.eql("Business and all associated User has been Blacklisted Successfully");
+});
+
+pm.test("Verify response resultType is 'Success'", function () {
+    pm.expect(pm.response.json().resultType).to.eql('Success');
+});
+
+pm.test("Verify response message is 'Success'", function () {
+    pm.expect(pm.response.json().message).to.eql('Success');
+});
+
+pm.test("Verify response successful is true", function () {
+    pm.expect(pm.response.json().successful).to.eql(true);
+});
+
+pm.test("Verify response hasResult is a boolean", function () {
+    pm.expect(pm.response.json().hasResult).to.be.a('boolean');
+});
+
+pm.test("Verify response resultType is a string", function () {
+    pm.expect(pm.response.json().resultType).to.be.a('string');
+});
+
+pm.test("Verify response message is a string", function () {
+    pm.expect(pm.response.json().message).to.be.a('string');
+});
+
+pm.test("Verify response successful is a boolean", function () {
+    pm.expect(pm.response.json().successful).to.be.a('boolean');
+});

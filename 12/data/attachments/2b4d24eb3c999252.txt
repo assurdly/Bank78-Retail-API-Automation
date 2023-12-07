@@ -1,0 +1,30 @@
+pm.test("Response has no result", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.hasResult).to.be.false;
+    pm.expect(responseData.result).to.be.null;
+});
+
+pm.test("ResultType is 'Error'", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.resultType).to.equal("Error");
+});
+
+pm.test("Message is 'Customer already blacklisted'", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.message).to.equal("Customer already blacklisted");
+});
+
+pm.test("Successful is false", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.successful).to.be.false;
+});
+
+pm.test("ValidationMessages is null", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.validationMessages).to.be.null;
+});

@@ -1,0 +1,29 @@
+
+pm.test("Response status code is 200", function () {
+  pm.response.to.have.status(200);
+});
+
+
+  pm.test("Validate the hasResult field is a boolean", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.hasResult).to.be.a('boolean');
+  });
+
+
+pm.test("Verify that the 'result' object is present in the response", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData).to.be.an('object');
+  pm.expect(responseData.result).to.exist;
+});
+
+
+pm.test("Validate the presence and count of 'items' array in 'result' object", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.result).to.exist.and.to.be.an('object');
+    pm.expect(responseData.result.items).to.exist.and.to.be.an('array');
+    pm.expect(responseData.result.items).to.have.lengthOf(10);
+});
+
