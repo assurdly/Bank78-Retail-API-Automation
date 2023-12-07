@@ -1,0 +1,27 @@
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Response 'hasResult' is false", function () {
+    pm.expect(pm.response.json().hasResult).to.be.false;
+});
+
+pm.test("Response 'result' is null", function () {
+    pm.expect(pm.response.json().result).to.be.null;
+});
+
+pm.test("Response 'resultType' is a string and equals 'Error'", function () {
+    pm.expect(pm.response.json().resultType).to.be.a('string').and.to.equal('Error');
+});
+
+pm.test("Response 'message' is a string and equals 'Please provide rejection message'", function () {
+    pm.expect(pm.response.json().message).to.be.a('string').and.to.equal('Please provide rejection message');
+});
+
+pm.test("Response 'validationMessages' is null", function () {
+    pm.expect(pm.response.json().validationMessages).to.be.null;
+});
+
+pm.test("Response 'successful' is false", function () {
+    pm.expect(pm.response.json().successful).to.be.false;
+});

@@ -1,0 +1,19 @@
+pm.test("Response status code is 200 OK", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Validate response body properties and values", function () {
+    const responseBody = pm.response.json();
+
+    pm.expect(responseBody).to.have.property("hasResult", true);
+
+    pm.expect(responseBody).to.have.property("result");
+    const result = responseBody.result;
+    pm.expect(result).to.be.an("object");
+    pm.expect(result).to.have.property("roleName", null);
+
+    pm.expect(responseBody).to.have.property("resultType", 1);
+    pm.expect(responseBody).to.have.property("message", "Success");
+    pm.expect(responseBody).to.have.property("validationMessages", null);
+    pm.expect(responseBody).to.have.property("successful", true);
+});

@@ -1,0 +1,23 @@
+pm.test("Response code is 400 (Bad Request)", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Response structure and properties for 400", function () {
+    pm.expect(pm.response.json()).to.have.property("hasResult", false);
+    pm.expect(pm.response.json()).to.have.property("result", null);
+    pm.expect(pm.response.json()).to.have.property("resultType", 2);
+    pm.expect(pm.response.json()).to.have.property("message", "Transfer could not be completed");
+    pm.expect(pm.response.json()).to.have.property("validationMessages");
+    pm.expect(pm.response.json()).to.have.property("successful", false);
+    pm.expect(pm.response.json()).to.have.property("errorCode", 1018);
+    pm.expect(pm.response.json()).to.have.property("responseCode", "BANK78TF01017");
+});
+
+
+pm.test("Error message matches the expected value for 400", function () {
+    pm.expect(pm.response.json().message).to.equal("Transfer could not be completed");
+});
+
+pm.test("Error code for failed request is 1018", function () {
+    pm.expect(pm.response.json().errorCode).to.equal(1018);
+});

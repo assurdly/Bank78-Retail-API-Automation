@@ -1,0 +1,45 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response has 'hasResult' property", function () {
+    pm.expect(pm.response.json()).to.have.property('hasResult');
+});
+
+pm.test("Response has 'result' property", function () {
+    pm.expect(pm.response.json()).to.have.property('result');
+});
+
+pm.test("Each element in the 'sections' array has 'id' property", function () {
+    pm.response.json().result.sections.forEach(function(section) {
+        pm.expect(section).to.have.property('id');
+    });
+});
+
+pm.test("Each element in the 'sections' array has 'applicationSectionId' property", function () {
+    pm.response.json().result.sections.forEach(function(section) {
+        pm.expect(section).to.have.property('applicationSectionId');
+    });
+});
+
+pm.test("Each element in the 'sections' array has 'sectionName' property", function () {
+    pm.response.json().result.sections.forEach(function(section) {
+        pm.expect(section).to.have.property('sectionName');
+    });
+});
+
+pm.test("Each element in the 'permissions' array has 'id' property", function () {
+    pm.response.json().result.sections.forEach(function(section) {
+        section.permissions.forEach(function(permission) {
+            pm.expect(permission).to.have.property('id');
+        });
+    });
+});
+
+pm.test("Each element in the 'permissions' array has 'checked' property", function () {
+    pm.response.json().result.sections.forEach(function(section) {
+        section.permissions.forEach(function(permission) {
+            pm.expect(permission).to.have.property('checked');
+        });
+    });
+});
