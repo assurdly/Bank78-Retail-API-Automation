@@ -1,0 +1,30 @@
+pm.test("Response has no result", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.hasResult).to.be.false;
+    pm.expect(responseData.result).to.be.null;
+});
+
+pm.test("ResultType is 'ValidationError'", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.resultType).to.equal("ValidationError");
+});
+
+pm.test("Message is 'Response has validation errors'", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.message).to.equal("Response has validation errors");
+});
+
+pm.test("Successful is false", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.successful).to.be.false;
+});
+
+pm.test("ValidationMessages contains 'The username field is required.'", function() {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.validationMessages).to.include("The username field is required.");
+});

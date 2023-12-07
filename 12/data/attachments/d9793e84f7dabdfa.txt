@@ -1,0 +1,30 @@
+pm.test("Response status code is 200", function () {
+  pm.response.to.have.status(200);
+});
+pm.test("Response status code is 200", function () {
+  pm.expect(pm.response.code).to.equal(200);
+});
+
+
+pm.test("Verify that 'hasResult' is a boolean", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData.hasResult).to.be.a('boolean');
+});
+
+
+pm.test("Verify that 'result' is an object", function () {
+  const responseData = pm.response.json();
+
+  pm.expect(responseData.result).to.be.an('object');
+});
+
+
+pm.test("Verify that 'items' array is present in the response and contains at least one element", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.result).to.exist.and.to.be.an('object');
+    pm.expect(responseData.result.items).to.exist.and.to.be.an('array');
+    pm.expect(responseData.result.items.length).to.be.at.least(1, "'items' array should contain at least one element");
+});
