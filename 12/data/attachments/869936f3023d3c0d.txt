@@ -1,0 +1,34 @@
+pm.test("Response status code is 200", function () {
+  pm.response.to.have.status(200);
+});
+pm.test("Response has an error message", function () {
+  var responseJSON = pm.response.json();
+  pm.expect(responseJSON.message).to.be.a('string').and.to.not.be.empty;
+});
+
+pm.test("Response 'hasResult' is true", function () {
+    pm.expect(pm.response.json().hasResult).to.be.true;
+});
+
+pm.test("Response 'resultType' is 'Success'", function () {
+    pm.expect(pm.response.json().resultType).to.equal("Success");
+});
+
+pm.test("Response 'message' is 'Success'", function () {
+    pm.expect(pm.response.json().message).to.equal("Success");
+});
+
+pm.test("Response 'successful' is true", function () {
+    pm.expect(pm.response.json().successful).to.be.true;
+});
+
+// Optional: Verify the 'result' object (if needed)
+pm.test("Response 'result' object contains 'message'", function () {
+    pm.expect(pm.response.json().result).to.have.property('message');
+    pm.expect(pm.response.json().result.message).to.equal("Decline Successful");
+});
+
+// Optional: Verify 'validationMessages' (if needed)
+pm.test("Response 'validationMessages' is null", function () {
+    pm.expect(pm.response.json().validationMessages).to.be.null;
+});

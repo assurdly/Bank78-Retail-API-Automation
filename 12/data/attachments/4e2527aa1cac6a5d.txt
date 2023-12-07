@@ -1,0 +1,14 @@
+pm.test("Status code is 400 Bad Request", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Response body structure and error message", function () {
+    const responseBody = pm.response.json();
+
+    pm.expect(responseBody).to.have.property("hasResult", false);
+    pm.expect(responseBody).to.have.property("result", null);
+    pm.expect(responseBody).to.have.property("resultType", 2);
+    pm.expect(responseBody).to.have.property("message", "Role already exists");
+    pm.expect(responseBody).to.have.property("validationMessages", null);
+    pm.expect(responseBody).to.have.property("successful", false);
+});
