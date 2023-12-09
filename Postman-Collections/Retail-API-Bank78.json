@@ -29244,6 +29244,36 @@
 				}
 			],
 			"id": "889db899-0396-42cd-b473-c5d569c0858a"
+		},
+		{
+			"name": "Edit schedule payment",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "9c3cd6a2-136b-4882-88ac-2f75bf292954",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"id": "ff8e4e6a-3d54-4d82-af1b-324f9032cdcc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "8acdf86d-b2d2-4dd7-9f1f-be0c72694918"
 		}
 	],
 	"variable": [
