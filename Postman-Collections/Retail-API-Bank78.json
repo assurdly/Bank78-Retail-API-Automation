@@ -28996,6 +28996,23 @@
 						},
 						{
 							"name": "Create Account - Invalid currency code",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6d14eff6-26e1-48de-891d-aef03389dec8",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Response body should Have validationMessages\", function () {\r",
+											"    pm.response.to.have.jsonBody('validationMessages');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "7b459c28-882f-4fff-b1d8-56836e4adf9b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -29085,6 +29102,23 @@
 						},
 						{
 							"name": "Create Account - Blank currency Code",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2673f0aa-1dd3-4d24-93de-de51eeb8ef0a",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Response body should Have validationMessages\", function () {\r",
+											"    pm.response.to.have.jsonBody('validationMessages');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "a64e2e4e-2d5f-473b-a537-7074233d856f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -29174,6 +29208,23 @@
 						},
 						{
 							"name": "Create Account - Blank name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a0dc0c7f-2310-48b1-874a-1f3f92ba48a8",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Response body should Have validationMessages\", function () {\r",
+											"    pm.response.to.have.jsonBody('validationMessages');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "24267041-e8cd-4e40-b9b9-43967476cd1b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -29263,6 +29314,23 @@
 						},
 						{
 							"name": "Create Account - Blank account type",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "650fcddb-0e6e-4ac3-a967-d81d60f4df00",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Response body should Have validationMessages\", function () {\r",
+											"    pm.response.to.have.jsonBody('validationMessages');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "cf5634d8-ce40-4f4d-a376-e0f514a61872",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
