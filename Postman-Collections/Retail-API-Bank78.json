@@ -28867,6 +28867,46 @@
 					"item": [
 						{
 							"name": "Create Account - Successful",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "098228cc-8aed-4918-9cf1-e30ae612f406",
+										"exec": [
+											"pm.test('Status code is 200', function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Response body should Have id\", function () {\r",
+											"    pm.response.to.have.jsonBody('result.id');\r",
+											"});\r",
+											"pm.test(\"Response body should Have walletGroupId\", function () {\r",
+											"    pm.response.to.have.jsonBody('result.walletGroupId');\r",
+											"});\r",
+											"pm.test(\"Response body should Have customerId\", function () {\r",
+											"    pm.response.to.have.jsonBody('result.customerId');\r",
+											"});\r",
+											"pm.test(\"Response body should Have availableBalance\", function () {\r",
+											"    pm.response.to.have.jsonBody('result.availableBalance');\r",
+											"});\r",
+											"pm.test(\"Response body should Have ledgerBalance\", function () {\r",
+											"    pm.response.to.have.jsonBody('result.ledgerBalance');\r",
+											"});\r",
+											"pm.test(\"Response body should Have accountNumber\", function () {\r",
+											"    pm.response.to.have.jsonBody('result.virtualAccount.accountNumber');\r",
+											"});\r",
+											"pm.test(\"Response body should Have bankCode\", function () {\r",
+											"    pm.response.to.have.jsonBody('result.virtualAccount.bankCode');\r",
+											"});\r",
+											"pm.test(\"Response body should Have bankName\", function () {\r",
+											"    pm.response.to.have.jsonBody('result.virtualAccount.bankName');\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "3b78d16e-d6ce-458c-8ac0-c24d14348b59",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
