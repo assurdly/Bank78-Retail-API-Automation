@@ -22,7 +22,7 @@ jobs:
         if: always()
         continue-on-error: true
         run: 
-           newman run ADMIN_API_COLLECTION/Admin_API_QA.json -e ADMIN_API_COLLECTION/BANK78_ENV_postman_environment.json --reporters cli,allure
+           newman run Ratail-Collections/Retail-API-Bank78.json -e "https://lively-capsule-274334.postman.co/workspace/Bank-78~e0f123d1-464d-4aed-987e-aff85f3e8260/environment/28334184-85064f57-f1e6-49be-b65e-869d1142ff52?action=share&creator=28334184" --reporters cli,allure
            echo "Admin API Postman tests run."
            
       - name: Get ADMIN Allure history
