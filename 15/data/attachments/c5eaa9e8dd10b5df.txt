@@ -1,0 +1,14 @@
+{
+  "userName": "johndoe_test101@mailinator.com",
+  "kycStatus": "Level2rejected",
+  "kycApprovedBy": "superadmin@payaza.africa",
+  "kycDeclineReason": "ID Mismatch",
+  "detail": [
+    {
+      "email": "bryan+39@assurdly.com",
+      "reason": [
+        "Liveness"
+      ]
+    }
+  ]
+}

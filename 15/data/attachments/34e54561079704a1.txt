@@ -1,0 +1,25 @@
+pm.test("Status code is 200 OK", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response body structure and 'isActive' property", function () {
+    const responseBody = pm.response.json();
+    
+    pm.expect(responseBody).to.have.property("hasResult", true);
+    pm.expect(responseBody).to.have.property("result").to.be.an('object');
+    
+    const result = responseBody.result;
+    
+    // Assert that 'isActive' is either true or false
+    pm.expect(result).to.have.property("isActive").to.satisfy((value) => value === true || value === false);
+    
+    // other assertions
+    pm.expect(result).to.have.property("userCount").to.be.a('number');
+    pm.expect(result).to.have.property("description").to.be.a('string');
+    pm.expect(result).to.have.property("id").to.be.a('number');
+    pm.expect(result).to.have.property("name").to.be.a('string');
+    
+    pm.expect(responseBody).to.have.property("resultType", 1);
+    pm.expect(responseBody).to.have.property("message", "Success");
+    pm.expect(responseBody).to.have.property("successful", true);
+});
