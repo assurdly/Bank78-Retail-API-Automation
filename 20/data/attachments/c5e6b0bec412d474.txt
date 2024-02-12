@@ -1,0 +1,13 @@
+{
+  "id": "<integer>",
+  "tierLevel": "<integer>",
+  "tierName": "<string>",
+  "liveCheckWithBVN": "<boolean>",
+  "phoneNumber": "<boolean>",
+  "address": "<boolean>",
+  "meansOfIdWithBVN": "<boolean>",
+  "dailyDepositLimit": "<double>",
+  "dailyTransferLimit": "<double>",
+  "lifeTimeDeposit": "<double>",
+  "singleTransferLimit": "<double>"
+}

@@ -1,0 +1,14 @@
+{
+  "userName": "test3293@mailinator.com",
+  "kycStatus": "Level3Rejected",
+  "kycApprovedBy": "superadmin@payaza.africa",
+  "kycDeclineReason": "",
+  "detail": [
+    {
+      "email": "test3293@mailinator.com",
+      "reason": [
+        "Liveness"
+      ]
+    }
+  ]
+}

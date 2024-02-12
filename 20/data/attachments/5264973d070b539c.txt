@@ -1,0 +1,42 @@
+{
+  "userId": "<string>",
+  "sections": [
+    {
+      "sectionId": "<integer>",
+      "permissions": [
+        {
+          "id": "<integer>",
+          "name": "<string>",
+          "checked": "<boolean>",
+          "permissionId": "<integer>"
+        },
+        {
+          "id": "<integer>",
+          "name": "<string>",
+          "checked": "<boolean>",
+          "permissionId": "<integer>"
+        }
+      ],
+      "sectionName": "<string>"
+    },
+    {
+      "sectionId": "<integer>",
+      "permissions": [
+        {
+          "id": "<integer>",
+          "name": "<string>",
+          "checked": "<boolean>",
+          "permissionId": "<integer>"
+        },
+        {
+          "id": "<integer>",
+          "name": "<string>",
+          "checked": "<boolean>",
+          "permissionId": "<integer>"
+        }
+      ],
+      "sectionName": "<string>"
+    }
+  ],
+  "forceUserToLogin": "<boolean>"
+}

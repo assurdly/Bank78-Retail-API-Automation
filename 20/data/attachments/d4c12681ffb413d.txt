@@ -1,0 +1,84 @@
+pm.test("Response status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+var jsonData = pm.response.json();
+
+pm.test("Response is an object with hasResult property", function () {
+    pm.expect(jsonData).to.be.an('object').that.has.property('hasResult');
+});
+
+pm.test("Response hasResult property is true", function () {
+    pm.expect(jsonData.hasResult).to.be.true;
+});
+
+pm.test("Response is an object with result property", function () {
+    pm.expect(jsonData).to.be.an('object').that.has.property('result');
+});
+
+pm.test("Response result property is an array", function () {
+    pm.expect(jsonData.result).to.be.an('array');
+});
+
+pm.test("Response result is not empty", function () {
+    pm.expect(jsonData.result.length).to.be.greaterThan(0);
+});
+
+pm.test("Response result is not empty", function () {
+    jsonData.result.forEach((item) => {
+      pm.expect(item).to.have.property("id");
+      pm.expect(item).to.have.property("name");
+      pm.expect(item).to.have.property("rcBnNumber");
+      pm.expect(item).to.have.property("businessUid");
+      pm.expect(item).to.have.property("phoneNumber");
+    });
+});
+
+pm.test("Each element in the items array has a valid email address", function () {
+    jsonData.result.forEach((item) => {
+      pm.expect(item.email).to.be.a("string").and.to.match(/^\S+@\S+\.\S+$/);
+    });
+});
+
+pm.test("Each element in the items array has a valid phone number", function () {
+    jsonData.result.forEach((item) => {
+      pm.expect(item.phoneNumber).to.be.a('string').and.to.match(/^\d+$/);
+    });
+});
+
+
+pm.test("Each element in the items array has a valid active property", function () {
+    jsonData.result.forEach((item) => {
+        pm.expect(item.active).to.be.a('boolean');
+    });
+});
+
+pm.test("Each element in the items array has an accounts property", function () {
+    jsonData.result.forEach((item) => {
+        pm.expect(item).to.have.property('accounts');
+    });
+});
+
+pm.test("Each element in the items array has a customerRelationships property", function () {
+    jsonData.result.forEach((item) => {
+        pm.expect(item).to.have.property('customerRelationships');
+    });
+});
+
+pm.test("Each element in the items array has a stakeholders property", function () {
+    jsonData.result.forEach((item) => {
+        pm.expect(item).to.have.property('stakeholders');
+    });
+});
+
+pm.test("Each element in the items array has a userBusinesses property", function () {
+    jsonData.result.forEach((item) => {
+        pm.expect(item).to.have.property('userBusinesses');
+    });
+});
+
+pm.test("Each element in the items array has a blackListed property", function () {
+    jsonData.result.forEach((item) => {
+        pm.expect(item).to.have.property('blacklisted');
+    });
+});
