@@ -25,15 +25,15 @@ jobs:
            newman run Ratail-Collections/Retail-API-Bank78.json -e Ratail-Collections/BANK78_ENV_postman_environment.json --reporters cli,allure
            echo "Retail API Postman tests run."
            
-      - name: Get ADMIN Allure history
+      - name: Get Retail Allure history
         uses: actions/checkout@v2
         with:
           ref: gh-pages
           path: gh-pages
 
         
-      - name: ADMIN Allure report action
-        id: ADMIN_build
+      - name: Retail Allure report action
+        id: Retail_build
         uses: simple-elf/allure-report-action@master
         if: always()
         continue-on-error: true
