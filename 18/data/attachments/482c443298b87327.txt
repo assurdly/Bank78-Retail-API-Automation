@@ -1,0 +1,97 @@
+
+pm.test("Response status code is 200", function () {
+  pm.response.to.have.status(200);
+});
+
+
+pm.test("Email is in a valid format", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData.result.email).to.exist.and.to.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Email is not in a valid format");
+});
+
+pm.test("Verify response hasResult is true", function () {
+    pm.expect(pm.response.json().hasResult).to.eql(true);
+});
+
+pm.test("Verify response result contains expected properties", function () {
+    const result = pm.response.json().result;
+
+    // Check if 'name' property exists and is a string
+    pm.expect(result.name).to.be.a('string');
+
+    // Check if 'rcBnNumber' property exists and is a string
+    pm.expect(result.rcBnNumber).to.be.a('string');
+
+    // Check if 'email' property exists and is a string
+    pm.expect(result.email).to.be.a('string');
+
+    // Check if 'phoneNumber' property exists and is a string
+    pm.expect(result.phoneNumber).to.be.a('string');
+
+    // Check if 'phoneNumberCountryCode' property exists and is a string
+    pm.expect(result.phoneNumberCountryCode).to.be.a('string');
+
+    // Check if 'streetAddress1' property exists and is a string
+    pm.expect(result.streetAddress1).to.be.a('string');
+
+    // Check if 'streetAddress2' property exists and is a string
+    pm.expect(result.streetAddress2).to.be.a('string');
+
+    // Check if 'stateProvince' property exists and is a string
+    pm.expect(result.stateProvince).to.be.a('string');
+
+    // Check if 'city' property exists and is a string
+    pm.expect(result.city).to.be.a('string');
+
+    // Check if 'nearestLandmark' property exists and is a string
+    pm.expect(result.nearestLandmark).to.be.a('string');
+
+    // Check if 'postalCode' property exists and is a string
+    pm.expect(result.postalCode).to.be.a('string');
+
+    // Check if 'countryCode' property exists and is a string
+    pm.expect(result.countryCode).to.be.a('string');
+
+    // Check if 'natureOfBusiness' property exists and is a string
+    pm.expect(result.natureOfBusiness).to.be.a('string');
+
+    // Check if 'sourceOfRevenue' property exists and is a string
+    pm.expect(result.sourceOfRevenue).to.be.a('string');
+
+    // Check if 'sourceOfCapital' property exists and is a string
+    pm.expect(result.sourceOfCapital).to.be.a('string');
+
+    // Check if 'tin' property exists and is a string
+    pm.expect(result.tin).to.be.a('string');
+
+    // Check if 'taxCompliance' property exists and is a boolean
+    pm.expect(result.taxCompliance).to.be.a('boolean');
+
+    // Check if 'evidenceOfCorporateGovernance' property exists and is a boolean
+    pm.expect(result.evidenceOfCorporateGovernance).to.be.a('boolean');
+
+    // Check if 'dailyDeposit' property exists and is a number
+    pm.expect(result.dailyDeposit).to.be.a('number');
+
+    // Check if 'dailyTransfer' property exists and is a number
+    pm.expect(result.dailyTransfer).to.be.a('number');
+
+    // Check if 'lifetimeDeposit' property exists and is a number
+    pm.expect(result.lifetimeDeposit).to.be.a('number');
+
+    // Check if 'limitTransfer' property exists and is a number
+    pm.expect(result.limitTransfer).to.be.a('number');
+});
+
+pm.test("Verify response resultType is 'Success'", function () {
+    pm.expect(pm.response.json().resultType).to.eql('Success');
+});
+
+pm.test("Verify response message is 'Success'", function () {
+    pm.expect(pm.response.json().message).to.eql('Success');
+});
+
+pm.test("Verify response successful is true", function () {
+    pm.expect(pm.response.json().successful).to.eql(true);
+});
