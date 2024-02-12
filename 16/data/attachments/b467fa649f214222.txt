@@ -1,0 +1,19 @@
+{
+  "beneficiaryName": "",
+  "bankName": "Providus",
+  "accountName": "Abdel Abdufa",
+  "accountNumber": "1010001422",
+  "emailAddress": "abdel@email.com",
+  "countryCode": "+234",
+  "address": "Abuja",
+  "currencyRequirement": {
+    "name": "NGN",
+    "value": "100",
+    "forms": [
+      {
+        "dataLabel": "Money",
+        "dataValue": "Save Money"
+      }
+    ]
+  }
+}
