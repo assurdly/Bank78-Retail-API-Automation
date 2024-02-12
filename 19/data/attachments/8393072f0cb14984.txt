@@ -1,0 +1,62 @@
+
+pm.test("Response status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+pm.test("Response is an object with hasResult property", function () {
+    pm.expect(pm.response.json()).to.be.an('object').that.has.property('hasResult');
+});
+
+pm.test("Response has a result array", function () {
+    pm.expect(pm.response.json().result).to.be.an('array');
+});
+
+pm.test("Each element in the result array has the required properties", function () {
+    pm.response.json().result.forEach(function(customer) {
+        pm.expect(customer).to.have.property('userName');
+        pm.expect(customer).to.have.property('firstName');
+        pm.expect(customer).to.have.property('lastName');
+        pm.expect(customer).to.have.property('email');
+        pm.expect(customer).to.have.property('phoneNumber');
+        pm.expect(customer).to.have.property('phoneNumberCountryCode');
+        pm.expect(customer).to.have.property('countryCode');
+        pm.expect(customer).to.have.property('referralCode');
+        pm.expect(customer).to.have.property('idNumber');
+        pm.expect(customer).to.have.property('financialId');
+        pm.expect(customer).to.have.property('financialIdType');
+        pm.expect(customer).to.have.property('stateProvince');
+        pm.expect(customer).to.have.property('city');
+        pm.expect(customer).to.have.property('streetAddress1');
+        pm.expect(customer).to.have.property('streetAddress2');
+        pm.expect(customer).to.have.property('nearestLandmark');
+        pm.expect(customer).to.have.property('postalCode');
+        pm.expect(customer).to.have.property('profileImage');
+        pm.expect(customer).to.have.property('gender');
+        pm.expect(customer).to.have.property('securityQuestion1');
+        pm.expect(customer).to.have.property('securityAnswer1');
+        pm.expect(customer).to.have.property('securityQuestion2');
+        pm.expect(customer).to.have.property('securityAnswer2');
+        pm.expect(customer).to.have.property('phoneNumberVerifiedAt');
+        pm.expect(customer).to.have.property('emailVeriedAt');
+        pm.expect(customer).to.have.property('income');
+        pm.expect(customer).to.have.property('idFile');
+        pm.expect(customer).to.have.property('proofOfAddressFile');
+        pm.expect(customer).to.have.property('bankStatementFile');
+        pm.expect(customer).to.have.property('customerNumber');
+        pm.expect(customer).to.have.property('kycLevel');
+        pm.expect(customer).to.have.property('kycStatus');
+        pm.expect(customer).to.have.property('active');
+        pm.expect(customer).to.have.property('previousNames');
+        pm.expect(customer).to.have.property('meansOfId');
+        pm.expect(customer).to.have.property('userId');
+        pm.expect(customer).to.have.property('status');
+        pm.expect(customer).to.have.property('otp');
+        pm.expect(customer).to.have.property('dateCreated');
+        pm.expect(customer).to.have.property('stateOfOrigin');
+        pm.expect(customer).to.have.property('lgaOfOrigin');
+        pm.expect(customer).to.have.property('nationality');
+        pm.expect(customer).to.have.property('accounts');
+        pm.expect(customer).to.have.property('businessRelationships');
+    });
+});

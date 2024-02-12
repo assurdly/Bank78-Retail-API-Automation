@@ -1,0 +1,14 @@
+{
+  "id": "<integer>",
+  "businessTypeId": "<integer>",
+  "noOfDirectors": "<integer>",
+  "address": "<boolean>",
+  "dailyDepositLimit": "<double>",
+  "dailyTransferLimit": "<double>",
+  "lifeTimeDeposit": "<double>",
+  "singleTransferLimit": "<double>",
+  "businessDocumentId": [
+    "<integer>",
+    "<integer>"
+  ]
+}

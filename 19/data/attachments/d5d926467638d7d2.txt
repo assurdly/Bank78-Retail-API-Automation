@@ -1,0 +1,14 @@
+{
+  "userName": "bryan+39@assurdly.com",
+  "kycStatus": "Level1rejected",
+  "kycApprovedBy": "superadmin@payaza.africa",
+  "kycDeclineReason": "ID Mismatch",
+  "detail": [
+    {
+      "email": "bryan+39@assurdly.com",
+      "reason": [
+        "Liveness"
+      ]
+    }
+  ]
+}

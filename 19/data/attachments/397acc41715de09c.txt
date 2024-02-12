@@ -1,0 +1,22 @@
+
+pm.test("Response status code is 200", function () {
+  pm.expect(pm.response.code).to.equal(200);
+});
+
+
+pm.test("Response has the required fields - hasResult, result", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData).to.have.property('hasResult');
+    pm.expect(responseData).to.have.property('result');
+});
+
+
+pm.test("The 'result' array is present and contains at least one element", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData.result).to.exist.and.to.be.an('array');
+  pm.expect(responseData.result).to.have.lengthOf.at.least(1);
+});
+
