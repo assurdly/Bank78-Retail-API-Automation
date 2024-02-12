@@ -1,0 +1,26 @@
+pm.test("Message is 'Deactivated Successfully' or 'Activated Successfully'", function() {
+    const responseData = pm.response.json();
+    const expectedMessages = ["Deactivated Successfully", "Activated Successfully"];
+    
+    pm.expect(expectedMessages).to.include(responseData.result.message);
+});
+
+pm.test("Response has a 'hasResult' property", function() {
+    pm.expect(pm.response.json()).to.have.property("hasResult", true);
+});
+
+pm.test("Response has a 'resultType' property with value 'Success'", function() {
+    pm.expect(pm.response.json()).to.have.property("resultType", "Success");
+});
+
+pm.test("Response has a 'message' property with value 'Success'", function() {
+    pm.expect(pm.response.json()).to.have.property("message", "Success");
+});
+
+pm.test("Response has no 'validationMessages'", function() {
+    pm.expect(pm.response.json().validationMessages).to.be.null;
+});
+
+pm.test("Response has a 'successful' property with value 'true'", function() {
+    pm.expect(pm.response.json()).to.have.property("successful", true);
+});

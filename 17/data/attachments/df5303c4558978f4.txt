@@ -1,0 +1,15 @@
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Status code is Bad Request", function () {
+    pm.response.to.have.status('Bad Request');
+});
+
+var jsonData = pm.response.json();
+
+pm.test("Error in the response", function () {
+    pm.expect(jsonData.error).to.exist;
+    pm.expect(jsonData.error).to.be.a('string');
+    pm.expect(jsonData.error).to.eq('invalid_grant');
+});

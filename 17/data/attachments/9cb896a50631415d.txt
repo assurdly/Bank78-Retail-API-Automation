@@ -1,0 +1,30 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Message is 'Deactivated Successfully' or 'Activated Successfully'", function() {
+    const responseData = pm.response.json();
+    const expectedMessages = ["Business and all associated User has been Deactivated Successfully", "Business and all associated User has been Activated Successfully"];
+    
+    pm.expect(expectedMessages).to.include(responseData.result.message);
+});
+
+pm.test("Response has a 'hasResult' property", function() {
+    pm.expect(pm.response.json()).to.have.property("hasResult", true);
+});
+
+pm.test("Response has a 'resultType' property with value 'Success'", function() {
+    pm.expect(pm.response.json()).to.have.property("resultType", "Success");
+});
+
+pm.test("Response has a 'message' property with value 'Success'", function() {
+    pm.expect(pm.response.json()).to.have.property("message", "Success");
+});
+
+pm.test("Response has no 'validationMessages'", function() {
+    pm.expect(pm.response.json().validationMessages).to.be.null;
+});
+
+pm.test("Response has a 'successful' property with value 'true'", function() {
+    pm.expect(pm.response.json()).to.have.property("successful", true);
+});

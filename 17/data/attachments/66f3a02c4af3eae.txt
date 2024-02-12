@@ -1,0 +1,340 @@
+{
+  "description": "user roles",
+    "name": "User Role",
+    "sections": [
+      {
+        "id": 0,
+        "applicationSectionId": 1,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 1,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 2,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanUpdate",
+            "permissionId": 3,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanApprove",
+            "permissionId": 4,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanRejectKyc",
+            "permissionId": 5,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "Business",
+        "section": 1
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 2,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanAdd",
+            "permissionId": 6,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanView",
+            "permissionId": 7,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 8,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanUpdate",
+            "permissionId": 9,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanInviteUser",
+            "permissionId": 10,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "Administrator",
+        "section": 2
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 3,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 11,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 12,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "Transaction",
+        "section": 3
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 4,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 13,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanUpdate",
+            "permissionId": 14,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 15,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "Transfer",
+        "section": 4
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 5,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 16,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 17,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanAdd",
+            "permissionId": 18,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanUpdate",
+            "permissionId": 19,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "Configuration",
+        "section": 5
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 6,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanUpdate",
+            "permissionId": 20,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 21,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 22,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "Wallet",
+        "section": 6
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 7,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 23,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "Dashboard",
+        "section": 7
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 8,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanAdd",
+            "permissionId": 24,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 25,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 26,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanUpdate",
+            "permissionId": 27,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "User",
+        "section": 8
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 9,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanUpdate",
+            "permissionId": 28,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 29,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 30,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "EmailLogs",
+        "section": 9
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 10,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 31,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanExport",
+            "permissionId": 32,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "AuditTrails",
+        "section": 10
+      },
+      {
+        "id": 0,
+        "applicationSectionId": 11,
+        "permissions": [
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanAdd",
+            "permissionId": 33,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": true,
+            "name": "CanView",
+            "permissionId": 34,
+            "applicationSectionPermissionId": 0
+          },
+          {
+            "id": 0,
+            "checked": false,
+            "name": "CanUpdate",
+            "permissionId": 35,
+            "applicationSectionPermissionId": 0
+          }
+        ],
+        "sectionName": "RoleConfig",
+        "section": 11
+      }
+    ],
+    "isAdminRole":true
+  }

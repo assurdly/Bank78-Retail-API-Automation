@@ -1,0 +1,23 @@
+pm.test("Verify response hasResult is false", function () {
+    pm.expect(pm.response.json().hasResult).to.eql(false);
+});
+
+pm.test("Verify response result is null", function () {
+    pm.expect(pm.response.json().result).to.be.null;
+});
+
+pm.test("Verify response resultType is 'Error'", function () {
+    pm.expect(pm.response.json().resultType).to.eql('Error');
+});
+
+pm.test("Verify response message is 'Please provide the username'", function () {
+    pm.expect(pm.response.json().message).to.eql('Please provide the username');
+});
+
+pm.test("Verify response validationMessages is null", function () {
+    pm.expect(pm.response.json().validationMessages).to.be.null;
+});
+
+pm.test("Verify response successful is false", function () {
+    pm.expect(pm.response.json().successful).to.eql(false);
+});
