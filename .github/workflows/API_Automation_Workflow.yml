@@ -18,14 +18,13 @@ jobs:
           npm install -g newman newman-reporter-allure
           echo "Newman and newman-reporter-allure installed."
 
-      - name: Run ADMIN And Customer - API tests
+      - name: Run ADMIN - API tests
         if: always()
         continue-on-error: true
         run: 
-
-           newman run Postman-Collections/Retail-API-Bank78.json -e ADMIN_API_COLLECTION/BANK78_ENV_postman_environment.json --reporters cli,allure
-           echo "Customer Postman tests run."
-          
+           newman run ADMIN_API_COLLECTION/Admin_API_QA.json -e ADMIN_API_COLLECTION/BANK78_ENV_postman_environment.json --reporters cli,allure
+           echo "Admin API Postman tests run."
+           
       - name: Get ADMIN Allure history
         uses: actions/checkout@v2
         with:
@@ -67,7 +66,7 @@ jobs:
             cat "$summary_path"  # Print content before
 
             # Use sed to update the content within the <h2> element
-            sudo sed -i 's/Allure Report/Bank78 Customer - API Quality Readiness/' "$summary_path"
+            sudo sed -i 's/Allure Report/Bank78 ADMIN - API Quality Readiness/' "$summary_path"
 
             cat "$summary_path"  # Print content after
           else
