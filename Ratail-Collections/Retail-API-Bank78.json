@@ -169,24 +169,20 @@
 							"script": {
 								"id": "5cbbe3ec-ec6a-449c-b893-0f648dd308b6",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400, \"Bad Request\");\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Access token is present in the response\", function () {\r",
+									"pm.test(\"error message is 'unauthorized client'\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.access_token).to.exist;\r",
+									"    pm.expect(jsonData.error).to.exist.and.to.eql(\"unauthorized_client\");\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Access token is a non-empty string\", function () {\r",
+									"pm.test(\"error description is accurate\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.access_token).to.be.a('string').and.to.not.be.empty;\r",
+									"    pm.expect(jsonData.error_description).to.be.a('string').and.to.eql(\"Invalid Username or password\");\r",
 									"});\r",
-									"\r",
-									"pm.test(\"Set access token as an environmental variable\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.environment.set(\"customer_access_token\", jsonData.access_token);\r",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -229,7 +225,7 @@
 								{
 									"description": "password",
 									"key": "password",
-									"value": "Tested@0980"
+									"value": "Tested@098"
 								},
 								{
 									"description": "client_id",
