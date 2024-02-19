@@ -1,0 +1,13 @@
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400, "Bad Request");
+});
+
+pm.test("error message is 'unauthorized client'", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.error).to.exist.and.to.eql("unauthorized_client");
+});
+
+pm.test("error description is accurate", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.error_description).to.be.a('string').and.to.eql("Invalid Username or password");
+});
