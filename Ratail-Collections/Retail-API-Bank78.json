@@ -962,7 +962,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Verify response body contains validationMessages\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"This phone number already exists\");\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"This phone number is attached to another record.\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"verify reponse body contains hasResult\", function () {\r",
@@ -1183,6 +1183,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -1202,7 +1208,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"test5289@mailinator.com\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"test5289@mailinator.com\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": true\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1368,6 +1374,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -1387,7 +1399,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"A\",\n  \"lastName\": \"C\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"A\",\n  \"lastName\": \"C\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": true\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
