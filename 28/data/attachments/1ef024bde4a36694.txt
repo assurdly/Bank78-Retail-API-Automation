@@ -1,0 +1,28 @@
+pm.test('Status code is 200', function () {
+    pm.response.to.have.status(200);
+})
+
+pm.test("Response body should Have id", function () {
+    pm.response.to.have.jsonBody('result.id');
+});
+pm.test("Response body should Have walletGroupId", function () {
+    pm.response.to.have.jsonBody('result.walletGroupId');
+});
+pm.test("Response body should Have customerId", function () {
+    pm.response.to.have.jsonBody('result.customerId');
+});
+pm.test("Response body should Have availableBalance", function () {
+    pm.response.to.have.jsonBody('result.availableBalance');
+});
+pm.test("Response body should Have ledgerBalance", function () {
+    pm.response.to.have.jsonBody('result.ledgerBalance');
+});
+pm.test("Response body should Have accountNumber", function () {
+    pm.response.to.have.jsonBody('result.virtualAccount.accountNumber');
+});
+pm.test("Response body should Have bankCode", function () {
+    pm.response.to.have.jsonBody('result.virtualAccount.bankCode');
+});
+pm.test("Response body should Have bankName", function () {
+    pm.response.to.have.jsonBody('result.virtualAccount.bankName');
+});
