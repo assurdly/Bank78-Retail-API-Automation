@@ -3623,7 +3623,7 @@
 										{
 											"description": "username",
 											"key": "username",
-											"value": "{{userName}}"
+											"value": "test8033@mailinator.com"
 										},
 										{
 											"description": "password",
@@ -4476,6 +4476,16 @@
 										],
 										"type": "text/javascript"
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "46338115-e626-42be-bc5e-fa595a95a5ee",
+										"exec": [
+											"postman.setNextRequest(\"Verify OTP - Invalid OTP\")"
+										],
+										"type": "text/javascript"
+									}
 								}
 							],
 							"id": "3fcfe2ad-9300-4ece-97d7-2553af1ba7cc",
@@ -5006,136 +5016,6 @@
 					"name": "create-pin",
 					"item": [
 						{
-							"name": "Create Pin - Mismatched PIN",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "0090914f-b497-44bb-a634-346ddf6a9145",
-										"exec": [
-											"pm.test(\"Content-Type is present\", function () {\r",
-											"    pm.response.to.have.header(\"Content-Type\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response has a result property\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData).to.have.property(\"result\");\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"Result property has a message property\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"});\r",
-											"\r",
-											"pm.test(\"ResultType is a number\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.resultType).to.be.a(\"number\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is a string\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.message).to.eql(\"Pin and confirm pin don't match\");\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"Successful is a boolean\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "e958b772-3122-4a7e-8a55-0d99b1488137",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"6383\",\n  \"otp\": \"710071\",\n  \"pin\": \"6123\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/identity/api/v1/users/pin/create-pin"
-							},
-							"response": [
-								{
-									"id": "a85bb6f3-4ede-4202-85d4-b5b4aeb2fab7",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPin\": \"8868\",\n  \"otp\": \"061967\",\n  \"pin\": \"8911\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/users/pin/create-pin"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Warning\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
 							"name": "Create Pin - Valid Matching PIN",
 							"event": [
 								{
@@ -5292,6 +5172,136 @@
 							]
 						},
 						{
+							"name": "Create Pin - Mismatched PIN",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0090914f-b497-44bb-a634-346ddf6a9145",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has a result property\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData).to.have.property(\"result\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Result property has a message property\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"});\r",
+											"\r",
+											"pm.test(\"ResultType is a number\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.resultType).to.be.a(\"number\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is a string\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql(\"Pin and confirm pin don't match\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Successful is a boolean\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "e958b772-3122-4a7e-8a55-0d99b1488137",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{customer_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"confirmPin\": \"6383\",\n  \"otp\": \"710071\",\n  \"pin\": \"6123\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/identity/api/v1/users/pin/create-pin"
+							},
+							"response": [
+								{
+									"id": "a85bb6f3-4ede-4202-85d4-b5b4aeb2fab7",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPin\": \"8868\",\n  \"otp\": \"061967\",\n  \"pin\": \"8911\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/users/pin/create-pin"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Warning\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
 							"name": "Create Pin - Unverified OTP",
 							"event": [
 								{
@@ -5302,6 +5312,16 @@
 											"pm.test(\"Status code is 400\", function () {\r",
 											"    pm.response.to.have.status(400);\r",
 											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c5979bb0-dedf-4de6-91a9-3a3562acae63",
+										"exec": [
+											"postman.setNextRequest(\"Verify OTP - Invalid OTP\")"
 										],
 										"type": "text/javascript"
 									}
@@ -5447,6 +5467,16 @@
 											"});\r",
 											"\r",
 											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "95ad480b-129f-468a-a848-4014d4170e58",
+										"exec": [
 											""
 										],
 										"type": "text/javascript"
