@@ -1619,7 +1619,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"abc123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"abc123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": true\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1762,6 +1762,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -1781,7 +1787,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": true\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2023,7 +2029,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"ajenifujaajayimopelola\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"ajenifujaajayimopelola\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": true\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2189,7 +2195,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"++234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"++234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": true\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2368,7 +2374,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"userName\": \"\",\n  \"email\": \"\",\n  \"phoneNumber\": \"\",\n  \"phoneNumberCountryCode\": \"\",\n  \"referralCode\": \"\",\n  \"countryCode\": \"\",\n  \"password\": \"\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"userName\": \"\",\n  \"email\": \"\",\n  \"phoneNumber\": \"\",\n  \"phoneNumberCountryCode\": \"\",\n  \"referralCode\": \"\",\n  \"countryCode\": \"\",\n  \"password\": \"\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": \"\"\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2535,7 +2541,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"test1783@mailinator.com\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"test1783@mailinator.com\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"Tested@0980\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": true\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2719,7 +2725,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"\",\n    \"otp\": \"\"\n}\n",
+									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"userName\": \"{{cust_email}}\",\n  \"email\": \"{{cust_email}}\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"referralCode\": \"ABC123\",\n  \"countryCode\": \"NG\",\n  \"password\": \"\",\n    \"otp\": \"\",\n    \"agreeToSignUpTandC\": true\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2896,6 +2902,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -2905,11 +2917,16 @@
 									{
 										"key": "Accept",
 										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{ \n  \"UserName\": \"{{userName}}\", \n  \"otp\": \"077045\"\n}",
+									"raw": "{ \n  \"UserName\": \"{{userName}}\", \n  \"otp\": \"1234\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -3032,6 +3049,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -3041,6 +3064,11 @@
 									{
 										"key": "Accept",
 										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3169,6 +3197,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -3178,6 +3212,11 @@
 									{
 										"key": "Accept",
 										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "",
+										"type": "text"
 									}
 								],
 								"body": {
