@@ -1,0 +1,17 @@
+{
+    "Date": "Mon, 19 Feb 2024 06:01:44 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "126",
+    "Connection": "keep-alive",
+    "x-amzn-RequestId": "75b4d29a-f620-4ffa-9a14-2f68b6e623e1",
+    "CF-RAY": "857c4c0209e51b99-DUB",
+    "Content-Encoding": "br",
+    "CF-Cache-Status": "DYNAMIC",
+    "x-amzn-Remapped-Connection": "keep-alive",
+    "x-amz-apigw-id": "TXo_SEuijoEEGJg=",
+    "x-amzn-Remapped-Server": "cloudflare",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ANF%2FQnQzCuTUwey7WnKlCVY%2BzpCNz1qB%2Fts7MJCMfbD5PY6n8osNZlpmdZQEPT2oxG61NpOxoxPnwn83CiKWOWPN9Ifn89RIBgwZgLAP25zCaT6%2FhTEc3R%2FPKZA99q9IbFgMp5lnHq16\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "x-amzn-Remapped-Date": "Mon, 19 Feb 2024 06:01:44 GMT"
+}
