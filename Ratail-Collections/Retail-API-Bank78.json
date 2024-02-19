@@ -8576,7 +8576,7 @@
 											"\r",
 											"pm.test(\"Response contains a result message property\", function () {\r",
 											"    pm.expect(jsonData.result.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.result.message).to.eq(\"Recovery email sent successfully\");\r",
+											"    pm.expect(jsonData.result.message).to.eq(\"Passcode Reset OTP sen\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response contains a resultType property\", function () {\r",
@@ -8598,6 +8598,14 @@
 											"   pm.expect(jsonData.successful).to.eq(true);\r",
 											"});"
 										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b3452c02-bcd8-4ea5-b28a-b2f4d9f60196",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -8631,7 +8639,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"resetPasswordUrl\": \"https://docs.google.com/spreadsheets/d/1Q8d_SD6dFPWaozL7HKcbaNjV99rdlBPcorGm0VMEUuc/edit#gid=0\",\n  \"username\": \"{{userName}}\"\n}",
+									"raw": "{\n    \"username\": \"minnie@mailinator.com\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -8639,7 +8647,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/identity/v1/accounts/passwords/forgot"
+								"url": "{{baseUrl}}/identity/v1/accounts/passwords/forgot-otp"
 							},
 							"response": [
 								{
