@@ -3215,7 +3215,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "",
+										"value": "{{x-api-key}}",
 										"type": "text"
 									}
 								],
@@ -3329,6 +3329,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -3338,6 +3344,11 @@
 									{
 										"key": "Accept",
 										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3454,6 +3465,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -3463,6 +3480,11 @@
 									{
 										"key": "Accept",
 										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
 									}
 								],
 								"body": {
