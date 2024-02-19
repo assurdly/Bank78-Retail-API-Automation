@@ -1,0 +1,41 @@
+
+pm.test("Response status code is 200", function () {
+    pm.expect(pm.response.code).to.equal(200);
+});
+
+
+pm.test("Amount is a non-negative number", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.result).to.be.an('array');
+    
+    responseData.result.forEach(function (result) {
+        pm.expect(result.amount).to.be.a('number');
+        pm.expect(result.amount).to.be.at.least(0);
+    });
+});
+
+
+pm.test("Reference is a non-empty string", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.result).to.exist.and.to.be.an('array');
+    
+    responseData.result.forEach(function (result) {
+        pm.expect(result.reference).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, "Reference should not be empty");
+    });
+});
+
+
+pm.test("Each result object has an accountNumber property", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.result).to.exist.and.to.be.an('array');
+    
+    responseData.result.forEach(function (result) {
+        pm.expect(result.accountNumber).to.exist.and.to.be.a('string');
+    });
+});
