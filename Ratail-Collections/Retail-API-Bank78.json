@@ -8816,53 +8816,7 @@
 								},
 								"url": "{{baseUrli}}/v1/accounts/passwords/verify-otp"
 							},
-							"response": [
-								{
-									"id": "9a030606-a7cd-4fbf-8255-a95c1563c658",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"resetPasswordUrl\": \"<uri>\",\n  \"username\": \"MbGsaHMTEH.WQAH-6q53Efv.sB@33c43hdrj3B-Es2Swsfn-NnartasH1Q.kqw.47VXldTEjeo.5-siD4_V.BX55rWY-lGpyiDmw8My.OSVagBz8_zg-E-0I-rmHXI8b-ojns6kl8Bi.Z1.avZh-VXgEn-B5x.TOylwf\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/v1/accounts/passwords/resendlink"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"message\": \"<string>\",\n  \"resetTokenId\": \"<string>\"\n}"
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Verify OTP - Invalid OTP",
@@ -8967,56 +8921,10 @@
 								},
 								"url": "{{baseUrli}}/v1/accounts/passwords/verify-otp"
 							},
-							"response": [
-								{
-									"id": "6800402c-4b71-4118-8d57-962463e6980d",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"resetPasswordUrl\": \"<uri>\",\n  \"username\": \"MbGsaHMTEH.WQAH-6q53Efv.sB@33c43hdrj3B-Es2Swsfn-NnartasH1Q.kqw.47VXldTEjeo.5-siD4_V.BX55rWY-lGpyiDmw8My.OSVagBz8_zg-E-0I-rmHXI8b-ojns6kl8Bi.Z1.avZh-VXgEn-B5x.TOylwf\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/v1/accounts/passwords/resendlink"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"message\": \"<string>\",\n  \"resetTokenId\": \"<string>\"\n}"
-								}
-							]
+							"response": []
 						},
 						{
-							"name": "Resend link - Blank otp",
+							"name": "Verify OTP - Blank otp",
 							"event": [
 								{
 									"listen": "test",
@@ -9062,10 +8970,8 @@
 											"});\r",
 											"\r",
 											"pm.test(\"validation is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages).to.be.an(\"array\");\r",
 											"    pm.expect(jsonData.validationMessages[0]).to.eq\r",
-											"    (\"The ResetPasswordUrl field is required.\",\r",
-											"        \"The ResetPasswordUrl field is not a valid fully-qualified http, https, or ftp URL.\");\r",
+											"    (\"The OTP field is required.\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Successful property is a boolean\", function () {\r",
@@ -9073,6 +8979,14 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "de0437dd-0829-4f3f-90cc-9c05ecfce86b",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -9106,7 +9020,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"otp\": \"123456\",\n    \"resetTokenId\": \"{{resetTokenId}}\"\n}",
+									"raw": "{\n    \"otp\": \"\",\n    \"resetTokenId\": \"{{resetTokenId}}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -9165,7 +9079,7 @@
 							]
 						},
 						{
-							"name": "Resend link -Blank email",
+							"name": "Verify OTP - Blank ResetTokenId",
 							"event": [
 								{
 									"listen": "test",
@@ -9186,12 +9100,12 @@
 											"\r",
 											"var jsonData = pm.response.json();\r",
 											"\r",
-											"pm.test(\"Response has a result property\", function () {   \r",
+											"pm.test(\"Response bodi is present\", function () {   \r",
 											"    pm.expect(jsonData).to.exist;\r",
 											"    pm.expect(jsonData).to.be.an(\"object\");\r",
 											"});\r",
 											"\r",
-											"pm.test(\"hasResult property is present\", function () {   \r",
+											"pm.test(\"Response has a hasResult property\", function () {   \r",
 											"    pm.expect(jsonData.hasResult).to.be.a(\"boolean\");\r",
 											"    pm.expect(jsonData.hasResult).to.eq(false);\r",
 											"});\r",
@@ -9200,7 +9114,7 @@
 											"    pm.expect(jsonData.result).to.be.null;\r",
 											"});\r",
 											"\r",
-											"pm.test(\"resultType property is present\", function () {\r",
+											"pm.test(\"resultType is present\", function () {\r",
 											"    pm.expect(jsonData.resultType).to.be.a(\"number\");\r",
 											"    pm.expect(jsonData.resultType).to.eq(3);\r",
 											"});\r",
@@ -9210,22 +9124,188 @@
 											"    pm.expect(jsonData.message).to.eq(\"Response has validation errors\");\r",
 											"});\r",
 											"\r",
-											"pm.test(\"validationMessages is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eq('The Username field is required.');\r",
+											"pm.test(\"validation is present\", function () {\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eq\r",
+											"    (\"The ResetTokenId field is required\");\r",
 											"});\r",
 											"\r",
-											"\r",
-											"pm.test(\"Successful property is a boolean - false\", function () {\r",
+											"pm.test(\"Successful property is a boolean\", function () {\r",
 											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
 										"type": "text/javascript"
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "de0437dd-0829-4f3f-90cc-9c05ecfce86b",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
 								}
 							],
-							"id": "31960675-7a6d-4906-9da5-5c64d43406df",
+							"id": "aca65dcc-1857-4941-899b-5c23a788ac86",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{latest_cust_email}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"otp\": \"123456\",\n    \"resetTokenId\": \"\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrli}}/v1/accounts/passwords/verify-otp"
+							},
+							"response": [
+								{
+									"id": "939eb585-c061-4f9d-983f-0f6ae773225d",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resetPasswordUrl\": \"<uri>\",\n  \"username\": \"MbGsaHMTEH.WQAH-6q53Efv.sB@33c43hdrj3B-Es2Swsfn-NnartasH1Q.kqw.47VXldTEjeo.5-siD4_V.BX55rWY-lGpyiDmw8My.OSVagBz8_zg-E-0I-rmHXI8b-ojns6kl8Bi.Z1.avZh-VXgEn-B5x.TOylwf\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/v1/accounts/passwords/resendlink"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\",\n  \"resetTokenId\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify OTP - Invalid ResetTokenId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "70be0b22-b417-4079-a4e8-fda21d70188e",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response bodi is present\", function () {   \r",
+											"    pm.expect(jsonData).to.exist;\r",
+											"    pm.expect(jsonData).to.be.an(\"object\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has a hasResult property\", function () {   \r",
+											"    pm.expect(jsonData.hasResult).to.be.a(\"boolean\");\r",
+											"    pm.expect(jsonData.hasResult).to.eq(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result property is a non-empty object\", function () {\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is present\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.be.a(\"number\");\r",
+											"    pm.expect(jsonData.resultType).to.eq(3);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message property is present\", function () {\r",
+											"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
+											"    pm.expect(jsonData.message).to.eq(\"Response has validation errors\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"validation is present\", function () {\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eq\r",
+											"    (\"The OTP field is required.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Successful property is a boolean\", function () {\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"     pm.expect(jsonData.successful).to.eq(false);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "de0437dd-0829-4f3f-90cc-9c05ecfce86b",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "e11ce1c4-bc1b-4cd0-a4c1-7893da97ba43",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -9266,7 +9346,7 @@
 							},
 							"response": [
 								{
-									"id": "7bac2add-2e0d-4e52-82d9-60800f8b5699",
+									"id": "aef4cf9c-21a2-42a1-8f61-205c67c55b61",
 									"name": "Success",
 									"originalRequest": {
 										"method": "POST",
