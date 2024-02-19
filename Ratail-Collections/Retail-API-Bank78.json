@@ -10856,7 +10856,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"{{userName}}\",\n  \"password\": \"Tested@0981\",\n  \"confirmPassword\": \"Tested@0981\",\n  \"code\": \"30c87cb1-7be2-49e5-b847-873fb46b89d5\"\n}",
+									"raw": "{\n  \"username\": \"minnie@mailinator.com\",\n  \"password\": \"Tested@0980\",\n  \"confirmPassword\": \"Tested@0980\",\n  \"code\": \"30c87cb1-7be2-49e5-b847-873fb46b89d5\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -11004,7 +11004,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"{{userName}}\",\n  \"password\": \"Tested@0981\",\n  \"confirmPassword\": \"Tested@0981\",\n  \"code\": \"\"\n}",
+									"raw": "{\n  \"username\": \"minnie@mailinator.com\",\n  \"password\": \"Tested@0981\",\n  \"confirmPassword\": \"Tested@0981\",\n  \"code\": \"\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -11154,7 +11154,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"{{userName}}\",\n  \"password\": \"Tested@\",\n  \"confirmPassword\": \"Tested@\",\n  \"code\": \"{{cust_resetTokenId}}\"\n}",
+									"raw": "{\n  \"username\": \"{minnie@mailinator.com\",\n  \"password\": \"Tested@\",\n  \"confirmPassword\": \"Tested@\",\n  \"code\": \"{{cust_resetTokenId}}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -11301,7 +11301,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"{{userName}}\",\n  \"password\": \"Tested@\",\n  \"confirmPassword\": \"Tested@1234\",\n  \"code\": \"f9b00acf-87e5-4094-81b6-99ecd4179e75\"\n}",
+									"raw": "{\n  \"username\": \"minnie@mailinator.com\",\n  \"password\": \"Tested@\",\n  \"confirmPassword\": \"Tested@1234\",\n  \"code\": \"f9b00acf-87e5-4094-81b6-99ecd4179e75\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -11420,6 +11420,16 @@
 										],
 										"type": "text/javascript"
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1e6f4a8e-0e27-4334-9b45-25d559092f26",
+										"exec": [
+											"postman.setNextRequest(\"Change Password - Incorrect old password\")"
+										],
+										"type": "text/javascript"
+									}
 								}
 							],
 							"id": "026eb6e9-859e-4a0f-b2e8-92cea6962639",
@@ -11451,7 +11461,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"{{userName}}\",\n  \"password\": \"\",\n  \"confirmPassword\": \"\",\n  \"code\": \"68ab97ce-dc54-49fc-931a-3645df2ba49a\"\n}",
+									"raw": "{\n  \"username\": \"minnie@mailinator.com\",\n  \"password\": \"\",\n  \"confirmPassword\": \"\",\n  \"code\": \"68ab97ce-dc54-49fc-931a-3645df2ba49a\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -11604,7 +11614,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"confirmPassword\": \"Tested@0980\",\n  \"newPassword\": \"Tested@0980\",\n  \"oldPassword\": \"Tested@0981\"\n}",
+									"raw": "{\n  \"confirmPassword\": \"Tested@0980\",\n  \"newPassword\": \"Tested@0980\",\n  \"oldPassword\": \"Tested@0980\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
