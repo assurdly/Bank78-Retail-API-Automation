@@ -17722,15 +17722,15 @@
 													"});\r",
 													"\r",
 													"// Verify that the 'resultType' is 2\r",
-													"pm.test(\"Result type is 2 (Expected)\", function () {\r",
+													"pm.test(\"Result type is 3 (Expected)\", function () {\r",
 													"    const resultType = pm.response.json().resultType;\r",
-													"    pm.expect(resultType).to.equal(2);\r",
+													"    pm.expect(resultType).to.equal(3);\r",
 													"});\r",
 													"\r",
 													"// Verify that the 'message' property is \"Beneficiary details already exists\"\r",
-													"pm.test(\"'message' property is 'Beneficiary details already exists' (Expected)\", function () {\r",
+													"pm.test(\"'message' property is 'Response has validation errors' (Expected)\", function () {\r",
 													"    const message = pm.response.json().message;\r",
-													"    pm.expect(message).to.equal(\"Beneficiary details already exists\");\r",
+													"    pm.expect(message).to.equal(\"Response has validation errors\");\r",
 													"});\r",
 													"\r",
 													"// Verify that 'validationMessages' property is null\r",
@@ -17754,6 +17754,14 @@
 													"//\r",
 													""
 												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "6ab9c61b-f29c-4c50-8506-833d0342d512",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
