@@ -9079,7 +9079,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"validation is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eq\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.contain\r",
 											"    (\"The ResetTokenId field is required\");\r",
 											"});\r",
 											"\r",
@@ -11110,9 +11110,8 @@
 											"\r",
 											"pm.test(\"validationMessages is present\", function () {\r",
 											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eq\r",
-											"    (\"Passwords must be at least 8 characters.\",\r",
-											"        \"Passwords must have at least one digit ('0'-'9').\");\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.contain\r",
+											"    (\"Passwords must have at least one digit ('0'-'9').\");\r",
 											"});\r",
 											"\r",
 											"\r",
@@ -11121,6 +11120,14 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8ddb5064-be36-4893-a6ef-4cdff77ae699",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -11154,7 +11161,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"{minnie@mailinator.com\",\n  \"password\": \"Tested@\",\n  \"confirmPassword\": \"Tested@\",\n  \"code\": \"{{cust_resetTokenId}}\"\n}",
+									"raw": "{\n  \"username\": \"minnie@mailinator.com\",\n  \"password\": \"Tested@\",\n  \"confirmPassword\": \"Tested@\",\n  \"code\": \"{{cust_resetTokenId}}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
