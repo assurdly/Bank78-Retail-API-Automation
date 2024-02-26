@@ -6110,7 +6110,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"1111\",\n  \"newPin\": \"1111\",\n  \"oldPin\": \"8756\"\n}",
+									"raw": "{\n  \"confirmPin\": \"1111\",\n  \"newPin\": \"1111\",\n  \"oldPin\": \"2363\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -16820,7 +16820,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"8756\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"1111\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
