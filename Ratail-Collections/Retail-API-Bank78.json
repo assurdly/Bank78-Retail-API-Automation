@@ -30420,7 +30420,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{business_access_token}}"
+										"token": "{{customer_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -30433,7 +30433,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"responses\": [\r\n    {\r\n      \"questionId\":\"85073817-cc32-4589-9a7e-67fdbf31629f\",\r\n      \"response\": \"string\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"responses\": [\r\n    {\r\n      \"questionId\":\"73b41690-2093-4fc8-bea1-526b62d854ab\",\r\n      \"response\": \"Test\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -30833,7 +30833,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{business_access_token}}"
+										"token": "{{customer_access_token}}"
 									}
 								},
 								"method": "GET",
@@ -30906,7 +30906,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{business_access_token}}"
+										"token": "{{customer_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -30919,7 +30919,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"questionId\": \"24cfec88-134a-4349-9be8-5da15fcc96c0\",\r\n  \"response\": \"string\",\r\n  \"action\": \"string\"\r\n}\r\n",
+									"raw": "{\r\n  \"questionId\": \"85073817-cc32-4589-9a7e-67fdbf31629f\",\r\n  \"response\": \"string\",\r\n  \"action\": \"forgot password\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
