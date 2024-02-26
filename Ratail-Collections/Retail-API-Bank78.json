@@ -4251,6 +4251,16 @@
 										],
 										"type": "text/javascript"
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "09bae112-b087-4f86-83e3-78d0aba65d30",
+										"exec": [
+											"postman.setNextRequest(\"Forgot Password - Invalid email\")"
+										],
+										"type": "text/javascript"
+									}
 								}
 							],
 							"id": "6f87e89b-d97f-4cf5-a891-7622b5d78ba3",
@@ -15845,7 +15855,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n  \"transactionPin\": \"1111\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -16810,7 +16820,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"8756\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
