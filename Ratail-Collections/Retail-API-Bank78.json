@@ -72,12 +72,12 @@
 								{
 									"description": "username= test1860@mailinator.com, test6900, {{latest_cust_email}}",
 									"key": "username",
-									"value": "gee@mailsac.com"
+									"value": "test8033@mailinator.com"
 								},
 								{
 									"description": "password",
 									"key": "password",
-									"value": "Password@1"
+									"value": "Tested@0980"
 								},
 								{
 									"description": "client_id",
@@ -4434,596 +4434,6 @@
 			"name": "pin",
 			"item": [
 				{
-					"name": "request-pin-otp",
-					"item": [
-						{
-							"name": "Request PIN OTP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "915bbb31-2106-4e57-977d-0867b1ee3436",
-										"exec": [
-											"\r",
-											"pm.test(\"Response status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"Response has the required fields\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"    pm.expect(responseData).to.be.an('object');\r",
-											"    pm.expect(responseData.hasResult).to.exist;\r",
-											"    pm.expect(responseData.result).to.exist;\r",
-											"    pm.expect(responseData.resultType).to.exist;\r",
-											"    pm.expect(responseData.message).to.exist;\r",
-											"    pm.expect(responseData.validationMessages).to.be.null;\r",
-											"    pm.expect(responseData.successful).to.exist;\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"The 'hasResult' field should be a boolean\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"The 'result' field should be an object\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"    pm.expect(responseData.result).to.be.an('object');\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"The resultType field should be a number\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"\r",
-											"    pm.expect(responseData.resultType).to.be.a('number');\r",
-											"});\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "46338115-e626-42be-bc5e-fa595a95a5ee",
-										"exec": [
-											"postman.setNextRequest(\"Verify OTP - Invalid OTP\")"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "3fcfe2ad-9300-4ece-97d7-2553af1ba7cc",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"2222\",\n  \"pin\": \"2222\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/identity/api/v1/users/pin/request-pin-otp"
-							},
-							"response": [
-								{
-									"id": "21a9aff4-9d45-4baf-924a-cf44b09f36d1",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPin\": \"7181\",\n  \"pin\": \"5013\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/users/pin/request-pin-otp"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Warning\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						}
-					],
-					"id": "d062fe63-dedd-4e2b-ab26-d7bcfa0bfa5b"
-				},
-				{
-					"name": "Verify-otp",
-					"item": [
-						{
-							"name": "Verify OTP - Valid OTP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "855f89f2-3aeb-4aaf-a13f-d9bb67410f55",
-										"exec": [
-											"pm.test(\"Response status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											" const responseData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response has the required fields\", function () {\r",
-											"    pm.expect(responseData).to.be.an('object');\r",
-											"    pm.expect(responseData.hasResult).to.exist;\r",
-											"    pm.expect(responseData.result).to.be.an('object');\r",
-											"    pm.expect(responseData.resultType).to.exist;\r",
-											"    pm.expect(responseData.message).to.exist;\r",
-											"    pm.expect(responseData.validationMessages).to.be.null;\r",
-											"    pm.expect(responseData.successful).to.exist;\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"The 'hasResult' field should be a boolean\", function () {\r",
-											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(responseData.hasResult).to.eq(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The 'result' field should be an object\", function () {\r",
-											"    pm.expect(responseData.result.message).to.be.a('string');\r",
-											"    pm.expect(responseData.result.message).to.eq('PIN OTP Verified Successfuly');\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"The resultType field should be a number\", function () {\r",
-											"    pm.expect(responseData.resultType).to.be.a('number');\r",
-											"    pm.expect(responseData.resultType).to.eq(1);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The successful field is present\", function () {\r",
-											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
-											"    pm.expect(responseData.successful).to.eq(true);\r",
-											"});\r",
-											"\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "730964f1-118b-4889-a627-821e37870c9d",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"otp\": \"208516\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/identity/api/v1/users/pin/verify-otp"
-							},
-							"response": [
-								{
-									"id": "64af9a60-79e6-4bb8-841d-280829c16b7f",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"otp\": \"381557\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/users/pin/verify-otp"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"ValidationError\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Verify OTP - Invalid OTP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "855f89f2-3aeb-4aaf-a13f-d9bb67410f55",
-										"exec": [
-											"pm.test(\"Response status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response code is Bad Request\", function () {\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});\r",
-											"\r",
-											"const responseData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response has the required fields\", function () {\r",
-											"    pm.expect(responseData).to.be.an('object');\r",
-											"    pm.expect(responseData.hasResult).to.exist;\r",
-											"    pm.expect(responseData.result).to.be.null;\r",
-											"    pm.expect(responseData.resultType).to.exist;\r",
-											"    pm.expect(responseData.message).to.exist;\r",
-											"    pm.expect(responseData.validationMessages).to.be.null;\r",
-											"    pm.expect(responseData.successful).to.exist;\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"The 'hasResult' field should be a boolean\", function () {\r",
-											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(responseData.hasResult).to.eq(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The resultType field should be a number\", function () {\r",
-											"    pm.expect(responseData.resultType).to.be.a('number');\r",
-											"    pm.expect(responseData.resultType).to.eq(2);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The message field is present\", function () {\r",
-											"    pm.expect(responseData.message).to.be.a('string');\r",
-											"    pm.expect(responseData.message).to.eq(\"Invalid OTP\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The successful field is present\", function () {\r",
-											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
-											"    pm.expect(responseData.successful).to.eq(false);\r",
-											"});\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "90bb56ed-18a6-4701-8114-272df763feca",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"otp\": \"208516\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/identity/api/v1/users/pin/verify-otp"
-							},
-							"response": [
-								{
-									"id": "055bb236-c7ce-4539-8dba-60fb1b6511be",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"otp\": \"381557\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/users/pin/verify-otp"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"ValidationError\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Verify OTP - Blank OTP field",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "855f89f2-3aeb-4aaf-a13f-d9bb67410f55",
-										"exec": [
-											"pm.test(\"Response status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response code is Bad Request\", function () {\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});\r",
-											"\r",
-											"const responseData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response has the required fields\", function () {\r",
-											"    pm.expect(responseData).to.be.an('object');\r",
-											"    pm.expect(responseData.hasResult).to.exist;\r",
-											"    pm.expect(responseData.result).to.be.null;\r",
-											"    pm.expect(responseData.resultType).to.exist;\r",
-											"    pm.expect(responseData.message).to.exist;\r",
-											"    pm.expect(responseData.validationMessages).to.be.be.an('array');\r",
-											"    pm.expect(responseData.successful).to.exist;\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"The 'hasResult' field should be a boolean\", function () {\r",
-											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(responseData.hasResult).to.eq(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The resultType field should be a number\", function () {\r",
-											"    pm.expect(responseData.resultType).to.be.a('number');\r",
-											"    pm.expect(responseData.resultType).to.eq(3);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The message field is present\", function () {\r",
-											"    pm.expect(responseData.message).to.be.a('string');\r",
-											"    pm.expect(responseData.message).to.eq(\"Response has validation errors\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The validationMessages field is present\", function () {\r",
-											"    pm.expect(responseData.validationMessages[0]).to.eq(\"The OTP field is required.\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"The successful field is present\", function () {\r",
-											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
-											"    pm.expect(responseData.successful).to.eq(false);\r",
-											"});\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "5ff6485c-fc19-4be6-a101-96aaf792e211",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"otp\": \"\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/identity/api/v1/users/pin/verify-otp"
-							},
-							"response": [
-								{
-									"id": "ec6ecaac-8837-4873-94d4-e042f2bbdeff",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"otp\": \"381557\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/users/pin/verify-otp"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"ValidationError\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						}
-					],
-					"id": "f8a22507-c869-4f5e-8d74-9ec3c3760e90"
-				},
-				{
 					"name": "create-pin",
 					"item": [
 						{
@@ -7069,6 +6479,605 @@
 						}
 					],
 					"id": "907090f4-a8bf-48b8-9b7b-b11e8263b3ab"
+				},
+				{
+					"name": "Verify-otp",
+					"item": [
+						{
+							"name": "Verify OTP - Valid OTP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "855f89f2-3aeb-4aaf-a13f-d9bb67410f55",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											" const responseData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response has the required fields\", function () {\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.hasResult).to.exist;\r",
+											"    pm.expect(responseData.result).to.be.an('object');\r",
+											"    pm.expect(responseData.resultType).to.exist;\r",
+											"    pm.expect(responseData.message).to.exist;\r",
+											"    pm.expect(responseData.validationMessages).to.be.null;\r",
+											"    pm.expect(responseData.successful).to.exist;\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The 'hasResult' field should be a boolean\", function () {\r",
+											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(responseData.hasResult).to.eq(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The 'result' field should be an object\", function () {\r",
+											"    pm.expect(responseData.result.message).to.be.a('string');\r",
+											"    pm.expect(responseData.result.message).to.eq('PIN OTP Verified Successfuly');\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The resultType field should be a number\", function () {\r",
+											"    pm.expect(responseData.resultType).to.be.a('number');\r",
+											"    pm.expect(responseData.resultType).to.eq(1);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The successful field is present\", function () {\r",
+											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
+											"    pm.expect(responseData.successful).to.eq(true);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "55df83ee-8eae-42d2-ae12-1a3b7f9fb974",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "730964f1-118b-4889-a627-821e37870c9d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{customer_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"otp\": \"731206\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/identity/api/v1/users/pin/verify-otp"
+							},
+							"response": [
+								{
+									"id": "64af9a60-79e6-4bb8-841d-280829c16b7f",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"otp\": \"381557\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/users/pin/verify-otp"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"ValidationError\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify OTP - Invalid OTP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "855f89f2-3aeb-4aaf-a13f-d9bb67410f55",
+										"exec": [
+											"pm.test(\"Response status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response code is Bad Request\", function () {\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"\r",
+											"const responseData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response has the required fields\", function () {\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.hasResult).to.exist;\r",
+											"    pm.expect(responseData.result).to.be.null;\r",
+											"    pm.expect(responseData.resultType).to.exist;\r",
+											"    pm.expect(responseData.message).to.exist;\r",
+											"    pm.expect(responseData.validationMessages).to.be.null;\r",
+											"    pm.expect(responseData.successful).to.exist;\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The 'hasResult' field should be a boolean\", function () {\r",
+											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(responseData.hasResult).to.eq(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The resultType field should be a number\", function () {\r",
+											"    pm.expect(responseData.resultType).to.be.a('number');\r",
+											"    pm.expect(responseData.resultType).to.eq(2);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The message field is present\", function () {\r",
+											"    pm.expect(responseData.message).to.be.a('string');\r",
+											"    pm.expect(responseData.message).to.eq(\"Invalid OTP\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The successful field is present\", function () {\r",
+											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
+											"    pm.expect(responseData.successful).to.eq(false);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "90bb56ed-18a6-4701-8114-272df763feca",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{customer_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"otp\": \"208516\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/identity/api/v1/users/pin/verify-otp"
+							},
+							"response": [
+								{
+									"id": "055bb236-c7ce-4539-8dba-60fb1b6511be",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"otp\": \"381557\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/users/pin/verify-otp"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"ValidationError\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify OTP - Blank OTP field",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "855f89f2-3aeb-4aaf-a13f-d9bb67410f55",
+										"exec": [
+											"pm.test(\"Response status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response code is Bad Request\", function () {\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"\r",
+											"const responseData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response has the required fields\", function () {\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.hasResult).to.exist;\r",
+											"    pm.expect(responseData.result).to.be.null;\r",
+											"    pm.expect(responseData.resultType).to.exist;\r",
+											"    pm.expect(responseData.message).to.exist;\r",
+											"    pm.expect(responseData.validationMessages).to.be.be.an('array');\r",
+											"    pm.expect(responseData.successful).to.exist;\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The 'hasResult' field should be a boolean\", function () {\r",
+											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(responseData.hasResult).to.eq(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The resultType field should be a number\", function () {\r",
+											"    pm.expect(responseData.resultType).to.be.a('number');\r",
+											"    pm.expect(responseData.resultType).to.eq(3);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The message field is present\", function () {\r",
+											"    pm.expect(responseData.message).to.be.a('string');\r",
+											"    pm.expect(responseData.message).to.eq(\"Response has validation errors\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The validationMessages field is present\", function () {\r",
+											"    pm.expect(responseData.validationMessages[0]).to.eq(\"The OTP field is required.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"The successful field is present\", function () {\r",
+											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
+											"    pm.expect(responseData.successful).to.eq(false);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "5ff6485c-fc19-4be6-a101-96aaf792e211",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{customer_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"otp\": \"\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/identity/api/v1/users/pin/verify-otp"
+							},
+							"response": [
+								{
+									"id": "ec6ecaac-8837-4873-94d4-e042f2bbdeff",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"otp\": \"381557\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/users/pin/verify-otp"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"ValidationError\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "f8a22507-c869-4f5e-8d74-9ec3c3760e90"
+				},
+				{
+					"name": "request-pin-otp",
+					"item": [
+						{
+							"name": "Request PIN OTP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "915bbb31-2106-4e57-977d-0867b1ee3436",
+										"exec": [
+											"\r",
+											"pm.test(\"Response status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response has the required fields\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.hasResult).to.exist;\r",
+											"    pm.expect(responseData.result).to.exist;\r",
+											"    pm.expect(responseData.resultType).to.exist;\r",
+											"    pm.expect(responseData.message).to.exist;\r",
+											"    pm.expect(responseData.validationMessages).to.be.null;\r",
+											"    pm.expect(responseData.successful).to.exist;\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The 'hasResult' field should be a boolean\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The 'result' field should be an object\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData.result).to.be.an('object');\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The resultType field should be a number\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData.resultType).to.be.a('number');\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "46338115-e626-42be-bc5e-fa595a95a5ee",
+										"exec": [
+											"postman.setNextRequest(\"Verify OTP - Invalid OTP\")"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "3fcfe2ad-9300-4ece-97d7-2553af1ba7cc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{customer_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"confirmPin\": \"2222\",\n  \"pin\": \"2222\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/identity/api/v1/users/pin/request-pin-otp"
+							},
+							"response": [
+								{
+									"id": "21a9aff4-9d45-4baf-924a-cf44b09f36d1",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPin\": \"7181\",\n  \"pin\": \"5013\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/users/pin/request-pin-otp"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Warning\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "d062fe63-dedd-4e2b-ab26-d7bcfa0bfa5b"
 				},
 				{
 					"name": "reset-pin",
