@@ -35,7 +35,8 @@
 									"    pm.environment.set(\"customer_access_token\", jsonData.access_token);\r",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -20971,7 +20972,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6666\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaries\": [\n    {\n      \"accountNumber\": \"1010001367\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1780004070\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"10\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1010001729\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"Have fun\",\n      \"saveBeneficiary\": \"true\"\n    }\n  \n  ],\n  \"currency\": \"NGN\"\n}",
+									"raw": "{\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaries\": [\n    {\n      \"accountNumber\": \"1010001367\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1780004070\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"10\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1010001729\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"Have fun\",\n      \"saveBeneficiary\": \"true\"\n    }\n  \n  ],\n  \"currency\": \"NGN\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
