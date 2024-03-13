@@ -1,0 +1,1 @@
+{"hasResult":false,"result":null,"resultType":"ValidationError","message":"Response has validation errors","validationMessages":["The tempCustomerDto field is required.","Error converting value {null} to type 'System.Boolean'. Path 'agreeToSignUpTandC', line 12, position 28."],"successful":false,"responseCode":null}
