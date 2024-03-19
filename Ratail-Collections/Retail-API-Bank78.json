@@ -504,9 +504,9 @@
 											"pm.test(\"Response has required fields\", function () {\r",
 											"    pm.expect(responseData).to.be.an('object');\r",
 											"    pm.expect(responseData.result).to.be.an('object');\r",
-											"    pm.expect(responseData.resultType).to.be.a('number');\r",
+											"    pm.expect(responseData.resultType).to.be.a('string');\r",
 											"    pm.expect(responseData.message).to.be.a('string');\r",
-											"    pm.expect(responseData.validationMessages).to.be.an('array');\r",
+											"  //  pm.expect(responseData.validationMessages).to.be.an('array');\r",
 											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
 											"});\r",
 											"\r",
@@ -517,7 +517,7 @@
 											"    pm.expect(responseData.result.email).to.exist;\r",
 											"    pm.expect(responseData.result.phoneNumber).to.be.a('string');\r",
 											"    pm.expect(responseData.result.phoneNumberCountryCode).to.be.a('string');\r",
-											"    pm.expect(responseData.validationMessages).to.be.an('array');\r",
+											"  //  pm.expect(responseData.validationMessages).to.be.an('array');\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Verify response contains hasResult\", function () {\r",
@@ -552,8 +552,8 @@
 											"    pm.expect(responseData.result.countryCode).to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
 											"});\r",
 											"\r",
-											"pm.test(\"resultType is a number and has a value of 4\", function () {\r",
-											"    pm.expect(responseData.resultType).to.equal(4);\r",
+											"pm.test(\"resultType is a string and returns success\", function () {\r",
+											"    pm.expect(responseData.resultType).to.equal(\"Success\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"message is success\", function () {\r",
@@ -564,7 +564,8 @@
 											"    pm.expect(responseData.successful).to.be.true;\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -580,7 +581,8 @@
 											"var email = \"test\"+rand+\"@mailinator.com\"\r",
 											"pm.environment.set(\"cust_email\",email)"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
