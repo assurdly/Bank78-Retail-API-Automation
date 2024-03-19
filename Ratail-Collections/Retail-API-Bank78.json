@@ -2326,7 +2326,8 @@
 											"    pm.expect(pm.response.text()).to.include(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -2342,7 +2343,8 @@
 											"var email = \"test\"+rand+\"@mailinator.com\"\r",
 											"pm.environment.set(\"cust_email\",email)"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
