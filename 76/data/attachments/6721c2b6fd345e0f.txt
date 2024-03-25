@@ -1,0 +1,9 @@
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400, "Bad Request");
+});
+
+pm.test("error message is 'invalid_grant'", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.error).to.exist.and.to.eql("invalid_grant");
+});
+
