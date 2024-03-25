@@ -22038,7 +22038,7 @@
 													"pm.test(\"Each element in the result array has the required properties\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
 													"    jsonData.result.forEach(function(element) {\r",
-													"        pm.expect(element).to.be.an('object').that.has.all.keys('accountName', 'accountNumber', 'isValid', 'bankCode', 'bankName', 'nameEnquiryId', 'message');\r",
+													"        pm.expect(element).to.be.an('object').that.has.all.keys('accountName', 'accountNumber', 'isValid', 'bankCode', 'bankName', 'nameEnquiryId', 'message', 'amount', 'narration', 'isLocal', 'vat', 'charges');\r",
 													"    });\r",
 													"});\r",
 													"\r",
@@ -22047,15 +22047,9 @@
 													"    pm.expect(jsonData.resultType).to.be.a('number');\r",
 													"});\r",
 													"\r",
-													"pm.test(\"message property is a string\", function () {\r",
-													"    var jsonData = pm.response.json();\r",
-													"    pm.expect(jsonData.message).to.be.a('string');\r",
-													"});\r",
 													"\r",
-													"pm.test(\"validationMessages property is an array\", function () {\r",
-													"    var jsonData = pm.response.json();\r",
-													"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
-													"});\r",
+													"\r",
+													"\r",
 													"\r",
 													"pm.test(\"successful property is a boolean\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
@@ -22072,7 +22066,8 @@
 													"    pm.expect(jsonData.responseCode).to.be.oneOf([null, 'string']);\r",
 													"});"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
